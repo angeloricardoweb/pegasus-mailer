@@ -1,9 +1,10 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import NextCors from 'nextjs-cors';
 
 const nodemailer = require("nodemailer");
 var mandrillTransport = require("nodemailer-mandrill-transport");
 
-export default async function sendContact(req, res) {
+export default async function sendContact(req: NextApiRequest, res: NextApiResponse<any>) {
     await NextCors(req, res, {
         // Options
         methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
@@ -36,13 +37,13 @@ export default async function sendContact(req, res) {
         `</div>`,
       ].join("\n"),
     })
-    .then((info) => {
+    .then((info: any) => {
       console.log(info);
       console.log("req");
       console.log(req.body);
       res.send("Email enviado com sucesso");
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.log(err);
 
       res.send("Erro no envio do email");
