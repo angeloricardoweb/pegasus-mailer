@@ -24,7 +24,7 @@ export default async function sendContact(req: NextApiRequest, res: NextApiRespo
   transport
     .sendMail({
       from: "Solicitação de contato<contato@eldoradobelem.com.br",
-      to: "Contato Contato <recepcao@eldoradobelem.com.br>",
+      to: "Contato Contato <contato@bredi.com.br>",
 
       subject: "Novo E-mail via Site",
       html: [
